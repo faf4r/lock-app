@@ -3,11 +3,11 @@ package com.tmf.lock
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
-    private val client = MQTTClient()   //MQTT client
+    private val client = MQTTClient(this)   //MQTT client
+    private val toast = ToastUtil(this)
     private var btn: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,8 +21,17 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(view: View?) {
         val topic = resources.getString(R.string.topic)
         val signal = resources.getString(R.string.signal)
-        client.publish(topic, signal)
-        Toast.makeText(this, resources.getString(R.string.open), Toast.LENGTH_SHORT).show()
+        if (client.isConnected()) {
+            client.publish(topic, signal)
+        } else {
+            toast.show(R.string.mqtt_disconnected)
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        toast.destroy()
+        client.disconnect()
     }
 }
 

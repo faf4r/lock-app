@@ -1,12 +1,25 @@
 <resources>
     <string name="app_name">Open the Door</string>
 
-    <string name="button">开门!</string>
+    <string name="mqtt_broker_uri">"tcp://121.41.80.56:1883"</string>
+
     <string name="topic">/lock</string>
     <string name="signal">open_door</string>
+    <string name="response_topic">/lock/response</string>
+    <string name="response_success">success</string>
+    <string name="response_failed">failed</string>
 
-    <string name="open">opened</string>
+    <string name="button">开门!</string>
+    <string name="opening">开门中…</string>
+    <string name="open">门开啦~</string>
+    <string name="open_failed">哎呀，没打开</string>
     <string name="close">closed</string>
 
-    <string name="mqtt_broker_uri">"tcp://121.41.80.56:1883"</string>
+    <string name="mqtt_connecting">connecting to MQTT broker…</string>
+    <string name="mqtt_connected">MQTT connected</string>
+    <string name="mqtt_connect_failed">Error: MQTT connection failed</string>
+    <string name="mqtt_connect_error">Error: MQTT connection error</string>
+    <string name="mqtt_disconnected">Error: MQTT broker disconnected</string>
+    <string name="connection_lost">MQTT connection lost!</string>
+    <string name="subscribe_failed">subscribe failed</string>
 </resources>
