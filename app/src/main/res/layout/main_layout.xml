@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LinearLayout orientation vertically !-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:outlineSpotShadowColor="@color/background"
+    android:outlineAmbientShadowColor="@color/background"
+    android:background="@color/background"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!--background-->
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:src="@drawable/bg_open_door"
+        android:scaleType="fitCenter" />
+
+    <!--Button !-->
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="194dp"
+        android:layout_height="359dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="160dp"
+        android:background="#00000000"
+        android:textSize="30sp" />
+
+</FrameLayout>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Open the Door</string>
+
+    <string name="button">开门!</string>
+    <string name="topic">/lock</string>
+    <string name="signal">open_door</string>
+
+    <string name="open">opened</string>
+    <string name="close">closed</string>
+
+    <string name="mqtt_broker_uri">"tcp://121.41.80.56:1883"</string>
+</resources>
