@@ -25,13 +25,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             client.publish(topic, signal)
         } else {
             toast.show(R.string.mqtt_disconnected)
+            client.connect(this)
         }
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         toast.destroy()
         client.disconnect()
+        super.onDestroy()
     }
 }
 
